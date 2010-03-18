@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>jQuery UI Basic Dialog Example</title>
+	
+	<link type="text/css" rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8rc3.custom.css" />
+	
+	<style type="text/css">
+	
+		body { background: #333;}
+		a {color: #fff;}
+	
+	</style>
+	
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8rc3.custom.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$("#myContent").dialog({autoOpen: false});
+			$("#openLink").click(function() {
+				$("#myContent").dialog("open")
+			});
+			
+			$("#changeStyle").click(function() {
+				$("<link />").attr("type", "text/css")
+					.attr("rel", "stylesheet")
+					.attr("href", "css/hot-sneaks/jquery-ui-1.8rc3.custom.css")
+					.appendTo("head");
+			});
+			
+		})
+	
+	</script>
+	
+</head>
+
+<body>
+	
+	<div id="myContent">
+		<h1>Content</h1>
+		<p>Really, this is a block of content</p>
+	</div>
+
+<p><a href="#" id="openLink">Open Sesame!</a></p>
+<p><a href="#" id="changeStyle">PRESTO CHANGE-O!</a></p>
+
+</body>
+</html>

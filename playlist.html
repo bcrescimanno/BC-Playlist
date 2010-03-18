@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Brightcove Playlist jQueryUI example</title>
+	
+	<link type="text/css" rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8rc3.custom.css" />
+	
+	<style type="text/css">
+	
+		body { background: #333; font-size: 10px;}
+		body > p { font-size: 14px;}
+		
+		a {color: #fff;}
+	
+	</style>
+	
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8rc3.custom.min.js"></script>
+	<script type="text/javascript" src="js/bcApi.js"></script>
+	<script type="text/javascript" src="js/playlist.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#myPlaylist").playlist({
+				apiKey: "GeBb3vdERThwL9j1cWrWDyKNh16VXmgv6AIlplic67ZwMtrEkdVKgg..",
+				playlistId: 72091245001
+			});
+			
+			$("#loadPlaylist").click(function() {
+				$("#myPlaylist").playlist("showPlaylist");
+			});
+			
+			$("#changeStyle").click(function() {
+				$("<link />").attr("type", "text/css")
+					.attr("rel", "stylesheet")
+					.attr("href", "css/hot-sneaks/jquery-ui-1.8rc3.custom.css")
+					.appendTo("head");
+			});
+		});
+	</script>
+	
+</head>
+
+<body>
+	
+	<p><a href="#" id="loadPlaylist">Load the Playlist</a></p>
+	<p><a href="#" id="changeStyle">PRESTO CHANGE-O!</a></p>
+	
+	<div id="myPlaylist" style="display: none">
+	</div>
+
+</body>
+</html>
